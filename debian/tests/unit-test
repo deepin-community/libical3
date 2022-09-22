@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+exec 2>&1
+
+mkdir build
+cd build
+cmake -DGOBJECT_INTROSPECTION=true -DICAL_GLIB_VAPI=true ..
+make
+make test
